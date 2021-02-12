@@ -1,8 +1,8 @@
-Las variables en lenguajes de programación es una declaración que permite que una palabra, como "nombre" (Esta es la variable), guarde información dentro de ésta, como "Toni" (Este es el valor), para poder ser usada en otro momento. Para poder crear una variable, hay que utilizar el comando "var", luego el nombre de la variable, seguido por un igual y por ultimo el valor que quieras darle. Las variables pueden ser utilizadas en ciertas operaciones, por ejemplo, si la variable "Número" tiene el valor "15", se puede usar para hacer cuentas, como Número + 15 = 30. Los valores de las variables pueden reemplazarse sin necesidad de borrar el valor original.
+Las variables en lenguajes de programación son una declaración que permite que una palabra, como "nombre" (Esta es la variable), guarde información dentro de ésta, como "Toni" (Este es el valor), para poder ser usada en otro momento. Para poder crear una variable, hay que utilizar el comando "var", luego el nombre de la variable, seguido por un igual y por ultimo el valor que quieras darle. Las variables pueden ser utilizadas en ciertas operaciones, por ejemplo, si la variable "Número" tiene el valor "15", se puede usar para hacer cuentas, como Número + 15 = 30. Los valores de las variables pueden reemplazarse sin necesidad de borrar el valor original.
 
 Los strings son un tipo de valor que se puede guardar en una variable, son un hilo de caracteres (Cualquiera que quieras usar), de ahí viene el nombre y siempre se tienen que escribir entre comillas. Si utilizas números en un string, no se puede utilizar para hacer cuentas, ya que toma ese número como un caracter y no un número en si.
 
-Las funciones son utilizadas para guardar un grupo de código con un nombre para ahorrar tiempo esbribiendo si se necesita usar ese grupo de código más de una ocasión, para poder invocar una función, siempre se tienen que utilizar parentesis. Si es que el código necesita un valor para poder funcionar, se pone entre los paréntesis, estos valores se llaman argumentos. Si es que queremos que la función ande lo más efectivamente posible, se utiliza return, lo que hace return es devolvernos un valor con los argumentos, por ejemplo, si de argumentos tengo 7 (x) y 3 (y), y quiero que la función me devuelva el resultado de la suma de estos dos el código dentro de la función tiene que ser "return x + y" y nos devolverá el resultado. Una vez la ejecución de return termina, la función se apaga, así que todo código después del return no va a funcionar
+Las funciones son utilizadas para guardar un grupo de código con un nombre para ahorrar tiempo escribiendo si se necesita usar ese grupo de código más de una ocasión, para poder invocar una función, siempre se tienen que utilizar parentesis. Si es que el código necesita un valor para poder funcionar, se pone entre los paréntesis, estos valores se llaman argumentos. Si es que queremos que la función ande lo más efectivamente posible, se utiliza return, lo que hace return es devolvernos un valor con los argumentos, por ejemplo, si de argumentos tengo 7 (x) y 3 (y), y quiero que la función me devuelva el resultado de la suma de estos dos el código dentro de la función tiene que ser "return x + y" y nos devolverá el resultado. Una vez la ejecución de return termina, la función se apaga, así que todo código después del return no va a funcionar
 
 Las declaraciones if nos permite agregar lógica al código, permitiendo ejecutar código en especifico si es que ciertas condiciones impuestas por nosotros son cumplidas, por ejemplo:
 
@@ -22,7 +22,7 @@ if (edad > 30) {
    console.log ('niño')
 }
 
-Es efectivamente un paso extra que toma, en forma de oración seria "Si (if) tu edad es mayor que 30, sos viejo, sino, si (else if) sos mayor de 20, sos joven, sino (else), sos un niño".
+Es efectivamente un paso extra que toma, y se puede utilizar cuantas veces quieras, en forma de oración seria "Si (if) tu edad es mayor que 30, sos viejo, sino, si (else if) sos mayor de 20, sos joven, sino (else), sos un niño".
 
 Los valores booleanos son tan solo dos valores, true (Verdadero) y  false (Falso), su único pero importante uso es utilizarse como un interruptor, por ejemplo:
 
@@ -32,4 +32,4 @@ if (nightTime) {
   turnOnLight = false
 }
 
-¿Es de noche? Entonces prender la luz, ¿No lo es? Entonces no la prender.
+¿Es de noche? Entonces prender la luz, ¿No lo es? Entonces no prenderla.
