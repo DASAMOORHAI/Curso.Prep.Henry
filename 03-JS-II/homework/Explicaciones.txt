@@ -1,0 +1,49 @@
+"for" es un comando que nos permite repetir un bloque de código muchas veces, se arman así:
+
+for (var i = n; i <= n; i++){
+ //bloque de texto
+}
+
+En la primera parte (var i = n) va el número por el que querés que comienze la repetición, normalmente no es necesario poner otra cosa que 0, la segunda parte (i <= n) indica a la computadora cuando parar de repetir el codigo, si ponemos 20 en lugar de la n repetirá el código 20 veces y por ultimo, la tercera parte (i++) indica que tanto valor tiene que agregar a n, en la manera que esta escrita ahora, aumentará de a 1, pero si se quiere que aumente a cantidades más grandes, se puede escribir como "i+= n"
+
+Los operadores lógicos agrega más opciones a la lógica booleana, se compone de 3 operadores:
+
+
+&& = Es el "Y" ("AND" en inglés), nos permite hacer que solo se active el código si todos los argumentos se cumple, ejemplo:
+
+
+if (100 > 10 && 10 === 10) {
+    console.log('Ambas declaraciones son ciertas, este código se ejecutará');
+}
+
+if (10 === 9 && 10 > 9) {
+    console.log('Una de las declaraciones es false, por lo que && devolverá false, y este código no se ejecutará');
+}
+
+
+|| = Es el "Ó" ("OR" en inglés), ésta activará el código si minimo un argumento se cumple, ejemplo:
+
+
+if (100 > 10 || 10 === 10) {
+    console.log('Ambas declaraciones son ciertas, este código se ejecutará');
+}
+
+if (10 === 9 || 10 > 9) {
+    console.log('Una de las declaraciones es true, por lo que || devolverá true y este código se ejecutará');
+}
+
+if (10 === 9 || 1 > 9) {
+    console.log('Ambas declaraciones son falsas, por lo que || devolverá false y este código no se ejecutará');
+}
+
+
+! = Este último es el "NO" ("NOT" en inglés), éste operador devolverá el valor booleano opuesto del que se le pasa, ejemplo:
+
+
+if (!false) {
+    console.log('El ! devolverá true, porque es lo contrario de false, así que ste código se ejecutará');
+}
+
+if (!(1 === 1)) {
+    console.log('1 es igual a 1, de modo que la expresión devuelve true. El operador ! devolverá lo contrario de eso, por lo que este código NO se ejecutará');
+}
