@@ -1,0 +1,63 @@
+Arrays: los array son listas de elementos, para definir un array, hay que utilizar los brackets [], , y para poner elementos dentro de la lista, hay que escribir los elementos dentro de los brackets, los elementos se separan con ",". No tiene límite de cantidad ni de que tipo de datos se pueden meter dentro, para llamar un elemento en especifico y no toda la lista, se pueden utilizar numeros, ejemplo:
+
+var array = ['pepe', 'pepita', 871, null]
+		0	1	2     3
+array [1]
+
+'pepita'
+
+Cuando se llama un elemento en específico, el comando array utilizado para llamarlo se vuelve ese elemento, ejemplo:
+
+var array = [122, 'bobis', function () {console.log (Hello There)}]
+	      0	     1                         2
+array [2] ()
+
+Hello There
+
+Al agregar las paréntesis, la function se activa ya que en este caso "array [2]" se volvió "function".
+
+Si es que adentro del array hay otro array, para poder acceder a un elemento en específico del segundo array, tan hay que escribir esto:
+
+array [n][n]
+
+Esto tambien funciona con strings, ya que las strings de alguna manera un array de carateres, ejemplo:
+
+var array = ['Eliza']
+
+array [0][1]
+
+'l'
+
+array [0][3]
+
+'z'
+
+La forma de asignar valores como lo mostré se llama forma literal, hay otras:
+Se puede utilizar un elemento de asignación, ejemplo:
+
+lista[] //Array vacío
+
+lista[0] = 'primer elemento'
+
+lista
+
+['primer elemento']
+
+Y se puede reemplazar utilizando otra vez un elemento de asignación:
+
+lista
+
+['primer elemento']
+
+lista[0] = 'nuevo elemento'
+
+lista
+
+['nuevo elemento']
+
+
+Utilizando funciones nativas del elemento ("push" y "pop"):
+
+"push" agrega elementos al final del array, es una función, asi que para utilizarla se utilizan paréntesis("lista.push()"), puede incluir una cantidad ilimitada de argumentos
+
+"pop" quita el último elemento de la  lista, es una función, asi que para utilizarla se utilizan paréntesis("lista.pop()"), si es que se utiliza "pop" para, por ejemplo, agregar un valor a una variable, la variable consigue el valor, pero se quita de la lista el valor utilizado, o sea, "pop" devuleve el valor pero tambien lo quita de la lista
