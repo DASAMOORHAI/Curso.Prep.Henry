@@ -1,0 +1,74 @@
+Los objetos son una lista de propiedades, estas propiedades tiene  un nombre (o clave) y un valor, son como los arrays, solo que uno no se ve obligado a utilizar número para llamar elementos en específico:
+
+var array = [hola, 258, le, va] //Uno se ve obligado a utilizar número y no se puede cambiar
+	       0     1    2   3
+
+var objeto = {saludo1: 'hola', numeroAlAzar: 819, funcionará: function() {console.log(si)}, 981:'numeritos'}
+                 saludo1          numeroAlAzar		       funcionará			  981
+
+Como habrás notado, para invocar un objeto se necesitan un par de llaves {}, y las propiedades se separan con ",". No se puede utilizar ";" dentro de un objeto, digo esto porque un objeto también puede escribirse así:
+
+var objeto = {
+  saludo1: 'Hello',
+  numeroAlAzar: 819,
+  ...
+}
+
+Se pueden poner cuantas propiedades uno quiera con cualquier tipo de valor. Cuando se pone una función como valor de una propiedad, a ésta se le dice método
+
+Para llamar estos valores hay 2 maneras:
+
+Bracket notation: Es igual que cuando llamas un valor particular en un array, se pone el nombre del objeto y entre brackets el nombre de la propiedad:
+
+objeto['propiedadN'];
+
+Dot notation: Es una manera simplificada de llamar propiedades, hay que escribir el objeto, un punto, y el nombre de la propiedad;
+
+objeto.propiedadN;
+
+La unica diferencia en estos dos es que a pesar de que Dot notation sea más rápida de escribir, no se pueden utilizar variables para llamar propiedades, a diferencia de con Bracket notation.
+
+Asignar valores nuevos en objetos también es igual que con arrays (tambien se pueden pisar valores con estos):
+
+Con Dot notation: objeto.nuevaPropiedad = valor;
+
+Con Bracket notation: objeto['nuevaPropiedad'] = valor;
+
+Notarás que los arrays son muy parecidos a los objetos, eso es porque los arrays SON objetos, en realidad, casi todo en JavaScript son objetos.
+
+Para eliminar propiedades si es diferente, tiene que utilizar su propio keyword, "delete":
+
+delete objeto.propiedadN;
+
+
+Keyword "this": Esta keyword, cuando es invocada, referencia el objeto que la invocó, ejemplo:
+
+persona = {
+  nombre: 'Eliza',
+  saludar: function() {
+    console.log('Hola ' + this.nombre + '!')
+  }
+}
+
+Al utilizar el keyword "this.nombre", cuando llame la propiedad "saludar", el keyword this va a tomar el valor de nombre, que es Eliza, en este caso, y lo va a poner en el lugar de "this.nombre", por lo que quedaría "Hola Eliza!", este comando es muy util porque si es que llegamos a cambiar el valor nombre, saludar usará el nuevo nombre en vez de el viejo, además de dejarnos hacer solo una function en vez de una para cada propiedad. NO OLVIDARSE, para invocar una función, sea en arrays u objetos, se necesita poner paréntesis al final, sino solo llama a la función pero no la da argumento, por lo que no se activará
+
+
+Como con objetos se pueden utilizan palabras para asignar propiedades, es bucle estandar no va a funcionar, para hacer un bucle y ver todo lo que tiene un objeto, hay que utilizar "for...in", es algo dificil de entender al principio, pero cuando le agarres la mano va a ser fácil, para escribir un loop "for...in", se escribe así:
+
+for(var cualquierPalabra in objeto) {}
+
+Un ejemplo sería:
+
+var usuario = {
+    username: 'juan.perez',
+    password: 'loremipsumpwd123',
+    lovesJavascript: true,
+    favoriteNumber: 42
+};
+
+for (var cualquierPalabra in usuario){
+    console.log(cualquierPalabra);
+    console.log(usuario[cualquierPalabra]);
+}
+
+Esto recorrerá cada clave del objeto y finalizará cuando se hayan iterado todas las claves. Podemos usar esta clave, y la notación de corchetes, en nuestro bucle for para acceder al valor asociado con esa clave.
