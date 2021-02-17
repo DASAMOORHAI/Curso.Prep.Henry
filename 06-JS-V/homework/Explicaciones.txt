@@ -1,0 +1,58 @@
+Prototype: Todos los objetos tienen una referencia a otro objeto llamado proto, ejemplo:
+
+function Persona(nombre, apellido) {
+  this.firstName = nombre;
+  this.lastName = apellido;
+}
+
+var beowulf = new Persona('Bradley', 'Oswald Wulf')
+
+La instancia "beowulf" tiene de prototipo a Persona. Los objetos pueden llamar propiedades de sus objetos prototipo, por esto es que ".push" o ".unshift" andan, hay un objeto global del que todo array, en este caso, es prototipo, por lo que al hacer ".push" (Que como recordaran, esta usando Dot notation, y no asignamos ningun valor a push) está en realidad llamando una propiedad de su objeto prototipo. Para crear un método como ".push" y los otros, o sea, que nos permiten activar sin que tengan que estar dentro del objeto sino que del prototipo (Que ayuda a que el código ocupe menos espacio y capacidad de procesamiento con muchas funciones), hay que utilizar ".prototype", ejemplo:
+
+function Games(realeaseDate) {
+  this.releaseDate = releaseDate; //Acá creé la plantilla
+}
+
+Games.prototype.getReleaseDate = function() {
+  return this.releaseDate;		      //Acá cree el comando nuevo
+}
+
+var skullgirls2ndEncore = new Games('15/02/17'); //Creé la instancia "skullgirls2ndEncore"
+
+skullgirls2ndEncore.getReleaseDate //Me devolverá releaseDate, o sea, 15/02/17
+
+Estos comandos pueden ser pisados por objetos individuales si se necesita que sea diferentes, ejemplo:
+
+function Persona(edad) {
+  this.edad = edad;
+}
+
+Persona.prototype.getEdad = function() {
+  return this.edad;
+}
+
+var obj1 = new Persona(50);
+
+var obj2 = new Persona(18);
+
+var obj3 = new Persona(500);
+
+// Si es que hago "obj1.getEdad()" me daria el valor de edad (50), pero como hago si es que quiero que obj3 haga algo diferente con ese valor?
+
+obj3.getEdad = function() {
+  return this.edad * 2;
+}
+
+obj3.getEdad() //Ahora me va a dar 1000, ya que creé una propiedad con una función del mismo nombre que del proto especificicamnete para obj3, como obj3 tiene "getEdad", no lo va a buscar en su prototipo, por lo que si hago "obj1.getEdad()" por ejemplo, me va a seguir tirando 50
+
+Se puede pisar la función para todos utilizando la misma función demostrada antes:
+
+Persona.prototype.getEdad = function() {
+  return 'tiene ' + this.edad + 'años';  //Ahora devolverá "tiene 50 años" si utilizo "obj1.getEdad"
+}
+
+Los constructors nos permiten poner valores a una clase, son los argumentos que van entre las paréntesis
+
+function Clase (constructor1, constructor2, ...) {}
+
+Los constructores pueden recibir herencia, cuando hago referencia a Herencia me refiero a la capacidad de un constructor de heredar propiedades y métodos de otro constructor, así como un Gato es Mamífero antes que Gato, y hereda sus 'propiedades' (nace, se reproduce y muere). Esto nos permite no repetir código y ahorrar poder de procesamiento
