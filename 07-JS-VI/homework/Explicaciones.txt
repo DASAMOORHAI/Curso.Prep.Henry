@@ -1,0 +1,24 @@
+JS es un lenguaje que trata a las funciones como first class. Esto significa que las funciones se pueden pasar como argumentos a otras funciones, retornarlas como resultados de una función, y guardarlas en variables u otras estructuras de datos. 
+Cuando pasamos una función como argumento, se le dice Callback(cb):
+
+function decirHolaAlUsuario(usuario) {
+  return 'Hola ' + usuario + '!';
+}
+
+function crearSaludo(usuario, cb) {
+  return cb(usuario);
+}
+
+crearSaludo('Dan', decirHolaAlUsuario)
+
+'Hola Dan!'
+
+Cuando se utiliza una función como callback, no hay que invocarla, sino no funcionará porque te devolvería el resultado de función, y utilizaría este resultado como argumento. lo que tiraría un error. La función funciona porque cuando, en este caso, "crearSaludo" pone los argumentos en su lugar, la función callback se invoca por la manera en la que los argumentos fueron puesto:
+
+function crearSaludo(usuario, cb) {
+  return cb(usuario);
+}
+
+crearSaludo('Dan', decirHolaAlUsuario)
+//Al activarse la función, pocisiona los argumentos así
+decirHolaAlUsuario('Dan') //por eso no hay que invocarla, se invoca sola cuando se activa la primera función
